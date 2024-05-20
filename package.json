@@ -1,0 +1,16 @@
+{
+  "name": "decathlon_e2e_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cypress run --headed --browser chrome"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.9.0"
+  }
+}
