@@ -1,9 +1,10 @@
 import HomePage from "../screens/homePage";
-import LoginPage from "../screens/loginPage";
-
+import SearchResultPage from "../screens/searchResultPage";
+import PageActions from "../actions/pageActions";
 describe("Home Page", () => {
   const homePage = new HomePage();
-  const loginPage = new LoginPage();
+  const searchResultPage = new SearchResultPage();
+  const pageActions = new PageActions();
   beforeEach(() => {
     cy.visit("https://web-playground.ultralesson.com/");
   });
@@ -14,6 +15,13 @@ describe("Home Page", () => {
 
   it("verify the navigation to login page", () => {
     homePage.navigateToLoginPage();
-    loginPage.getTitle().should("eq","Account – ul-web-playground");
+    homePage.getTitle().should("include", "Account");
+  });
+
+  it("verify search for product", () => {
+    homePage.searchForProduct("Shirt\n");
+    pageActions
+      .getText(searchResultPage.getFirstResult())
+      .should("include", "Shirt");
   });
 });
