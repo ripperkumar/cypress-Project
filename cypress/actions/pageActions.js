@@ -1,6 +1,6 @@
 class PageActions{
- getText(locator){
-    return locator.invoke('text');
+ getText(element){
+    return element.invoke('text');
  }
 }
 

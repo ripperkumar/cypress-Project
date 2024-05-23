@@ -10,7 +10,7 @@ class HomePage{
         return cy.title();
     }
 
-    getLoginBtn(){
+    getAccountBtn(){
         return cy.get(this.#accountBtn);
     }
     getSearchIcon(){
@@ -26,7 +26,7 @@ class HomePage{
     }
 
     navigateToLoginPage(){
-        this.getLoginBtn().click();
+        this.getAccountBtn().click();
     }
 
     searchForProduct(productName){
