@@ -1,22 +1,17 @@
-import HomePage from "../screens/homePage";
-import LoginPage from "../screens/loginPage";
-import SearchResultPage from "../screens/searchResultPage";
-import PageActions from "../actions/pageActions";
+import * as homePage from "../support/components/homepage/homePageLocators";
+import * as loginPage from "../support/components/loginpage/loginPageLocators";
+import * as searchResultPage from "../support/components/searchResultPage";
+import * as pageActions from "../support/actions/pageActions";
 import credential from "../testdata/credentials";
-import ProductPage from "../screens/productPage";
-import CartPage from "../screens/cartPage";
-import PaymentPage from "../screens/paymentPage";
-import AccoutPage from "../screens/accountPage";
+import * as productPage from "../support/components/productPage";
+import * as cartPage from "../support/components/cartpage/cartPageLocators";
+import * as paymentPage from "../support/components/paymentPage";
+import * as accountPage from "../support/components/accountpage/accountPageLocators"
 
 describe("Smoke test", () => {
-  const homePage = new HomePage();
-  const searchResultPage = new SearchResultPage();
-  const pageActions = new PageActions();
-  const loginPage = new LoginPage();
-  const productPage = new ProductPage();
-  const cartPage = new CartPage();
-  const paymentPage = new PaymentPage();
-  const accountPage = new AccoutPage();
+
+
+
   const validEmail = credential.validCredentials.email;
   const validPassword = credential.validCredentials.password;
 

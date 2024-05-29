@@ -1,8 +1,8 @@
-import HomePage from "../screens/homePage";
-import SearchResultPage from "../screens/searchResultPage";
-import PageActions from "../actions/pageActions";
+import * as homePage from "../support/components/homepage/homePageLocators";
+import SearchResultPage from "../support/components/searchResultPage";
+import PageActions from "../support/actions/pageActions";
 describe("Home Page", () => {
-  const homePage = new HomePage();
+
   const searchResultPage = new SearchResultPage();
   const pageActions = new PageActions();
   beforeEach(() => {

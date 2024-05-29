@@ -1,11 +1,10 @@
 
-import LoginPage from "../screens/loginPage";
-import HomePage from "../screens/homePage";
+import * as loginPage from "../support/components/loginpage/loginPageLocators";
+import * as homePage from "../support/components/homepage/homePageLocators";
 
 import credential from "../testdata/credentials.json"
 describe('Login Page',()=>{
-    const homePage = new HomePage();
-    const loginPage = new LoginPage();
+   
     const validEmail = credential.validCredentials.email;
     const validPassword = credential.validCredentials.password;
     const invalidEamil = credential.inValidCredentials.email;
