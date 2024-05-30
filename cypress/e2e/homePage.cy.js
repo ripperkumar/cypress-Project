@@ -1,10 +1,9 @@
 import * as homePage from "../support/components/homepage/homePageLocators";
-import SearchResultPage from "../support/components/searchResultPage";
-import PageActions from "../support/actions/pageActions";
+import * as searchResultPage from "../support/components/searchresultpage/searchResultPageLocators";
+import* as pageActions from "../support/actions/pageActions";
 describe("Home Page", () => {
 
-  const searchResultPage = new SearchResultPage();
-  const pageActions = new PageActions();
+
   beforeEach(() => {
     cy.visit("https://web-playground.ultralesson.com/");
   });
@@ -20,8 +19,8 @@ describe("Home Page", () => {
 
   it("verify search for product", () => {
     homePage.searchForProduct("Shirt\n");
-    pageActions
-      .getText(searchResultPage.getFirstResult())
+    searchResultPage.getFirstResult()
+        .invoke('text')
       .should("include", "Shirt");
   });
 });

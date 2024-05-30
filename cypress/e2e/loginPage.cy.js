@@ -2,28 +2,27 @@
 import * as loginPage from "../support/components/loginpage/loginPageLocators";
 import * as homePage from "../support/components/homepage/homePageLocators";
 
-import credential from "../testdata/credentials.json"
-describe('Login Page',()=>{
-   
-    const validEmail = credential.validCredentials.email;
-    const validPassword = credential.validCredentials.password;
-    const invalidEamil = credential.inValidCredentials.email;
-    const invalidPassword = credential.inValidCredentials.password;
+describe('Verify login',()=>{
+    let data;
+    before(()=>{
+        cy.fixture('credentials').then((userData)=>{
+            data=userData;
+        })
+    })
 
-    
     beforeEach(() => {
-        cy.visit("https://web-playground.ultralesson.com/");
         homePage.navigateToLoginPage();
       });
     
     it('verify login with valid credentials', ()=>{
-        loginPage.login(validEmail,validPassword)
+
+        loginPage.login(data.validCredentials.email,data.validCredentials.password)
         homePage.getTitle().should("eq", "Account – ul-web-playground");
     })
 
     it('verify login with invalid credentials', ()=>{
-        loginPage.login(invalidEamil,invalidPassword)
-        loginPage.getErrorMessageTag().should('be.visible');
+            loginPage.login(data.inValidCredentials.email,data.inValidCredentials.password)
+            loginPage.getErrorMessageTag().should('be.visible');
     })
 
     it('verify try to login with empty username and password',()=>{

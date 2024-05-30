@@ -21,3 +21,6 @@ import './commands'
 
 require('cypress-xpath')
 
+beforeEach(() => {
+    cy.visit("https://web-playground.ultralesson.com/");
+  });
