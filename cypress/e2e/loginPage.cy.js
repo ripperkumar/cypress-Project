@@ -2,7 +2,7 @@
 import * as loginPage from "../support/components/loginpage/loginPageLocators";
 import * as homePage from "../support/components/homepage/homePageLocators";
 
-describe('Verify login',()=>{
+describe('login',()=>{
     let data;
     before(()=>{
         cy.fixture('credentials').then((userData)=>{

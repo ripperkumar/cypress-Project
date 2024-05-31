@@ -15,5 +15,5 @@ export const navigateToLoginPage = () => {
 
 export const searchForProduct = (productName) => {
   getSearchIcon().click();
-  getSearchBar().type(productName);
+  getSearchBar().type(productName).type('{enter}');
 };

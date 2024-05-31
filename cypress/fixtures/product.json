@@ -1,0 +1,6 @@
+{
+  "existingProductName": "Shirt",
+  "notExistingProductName": "xyz",
+  "expectedIfProductFound": "Shirt",
+  "expectedIfProductNotFound": "No results found for “xyz”. Check the spelling or use a different word or phrase."
+}

@@ -23,7 +23,7 @@ describe("Smoke test", () => {
     loginPage.login(validEmail, validPassword);
     homePage.getTitle().should("eq", "Account – ul-web-playground");
 
-    homePage.searchForProduct("Shirt\n");
+    homePage.searchForProduct("Shirt");
     searchResultPage.getFirstResult()
         .invoke('text')
       .should("include", "Shirt");
