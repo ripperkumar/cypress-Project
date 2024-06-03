@@ -16,8 +16,8 @@ describe("Smoke test", () => {
 
   
   it("test happy path", () => {
+    homePage.getHomeBtn().click();
     homePage.getTitle().should("eq", "ul-web-playground");
-    cy.fixture('example').as('usersJson')
     homePage.navigateToLoginPage();
     homePage.getTitle().should("include", "Account");
     loginPage.login(validEmail, validPassword);

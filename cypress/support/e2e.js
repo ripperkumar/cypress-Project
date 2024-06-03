@@ -15,12 +15,18 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import cypress from "cypress";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
 require('cypress-xpath')
+//
+// beforeEach(() => {
+//     cy.visit("https://web-playground.ultralesson.com/");
+//   });
 
-beforeEach(() => {
-    cy.visit("https://web-playground.ultralesson.com/");
-  });
+before(()=>{
+    cy.visit(Cypress.env('baseurl'));
+    cy.login(Cypress.env('email'),Cypress.env('password'))
+})

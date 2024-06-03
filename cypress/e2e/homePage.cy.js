@@ -1,6 +1,4 @@
 import * as homePage from "../support/components/homepage/homePageLocators";
-import * as searchResultPage from "../support/components/searchresultpage/searchResultPageLocators";
-import* as pageActions from "../support/actions/pageActions";
 describe("Home Page", () => {
 
 
@@ -16,11 +14,10 @@ describe("Home Page", () => {
     homePage.navigateToLoginPage();
     homePage.getTitle().should("include", "Account");
   });
-
-  it("verify search for product", () => {
-    homePage.searchForProduct("Shirt\n");
-    searchResultPage.getFirstResult()
-        .invoke('text')
-      .should("include", "Shirt");
+  it('verify the search button',()=>{
+    homePage.getSearchIcon().click();
+    homePage.getSearchBar().should('be.visible');
   });
+
+
 });
